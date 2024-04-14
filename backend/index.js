@@ -1,7 +1,8 @@
 import express from 'express'
 import cors from 'cors'
 import hotspotRouter from './Routes/hotspotRouter.js'
-
+import dotenv from "dotenv"
+dotenv.config()
 import BluetoothRouter from './Routes/bluetoothRouter.js'
 import wifiRouter from './Routes/WifiRouter.js'
 import displayRouter from './Routes/displayRouter.js'
@@ -9,10 +10,18 @@ import aboutRouter from './Routes/aboutRouter.js'
 import simRouter from './Routes/simRouter.js'
 import soundRouter from './Routes/soundRouter.js'
 import connectionRouter from './Routes/connectionRouter.js'
+import connectDB from './db.js'
 const app = express()
 app.use(express.json())
-app.use(cors())
-const port = 800
+const corsOptions = {
+  origin: 'https://vercel.com/shubhansh0311s-projects/settingappfrontend',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+app.use(cors(corsOptions));
+// app.use(cors())
+connectDB()
+const port  = process.env.PORT || 8000;
+
 
 // if data is from PortableHotspot
 app.use('/hotspot', hotspotRouter)

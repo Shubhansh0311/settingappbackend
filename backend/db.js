@@ -8,6 +8,6 @@ const connectDB = async () => {
     console.log(err)
   }
 }
-connectDB()
+
 
 export default connectDB
