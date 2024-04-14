@@ -13,13 +13,13 @@ import connectionRouter from './Routes/connectionRouter.js'
 import connectDB from './db.js'
 const app = express()
 app.use(express.json())
-// const corsOptions = {
-//   origin: 'https://settingappfrontend.vercel.app',
-//   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-// };
-// app.use(cors())
-// app.use(cors(corsOptions));
+const corsOptions = {
+  origin: 'https://settingappfrontend.vercel.app',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
 app.use(cors())
+app.use(cors(corsOptions));
+// app.use(cors())
 const port  = process.env.PORT || 8000;
 
 
