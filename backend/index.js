@@ -20,7 +20,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 // app.use(cors())
 const port  = process.env.PORT || 8000;
-
+connectDB()
 
 // if data is from PortableHotspot
 app.use('/hotspot', hotspotRouter)
