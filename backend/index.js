@@ -20,7 +20,7 @@ app.use(express.json());
 // app.use(cors(corsOptions));
 app.use(
   cors({
-    origin: "https://settingappbackend.vercel.app/",
+    origin: "https://setting-app-frontend.vercel.app/",
   })
 );
 // app.use(cors())
