@@ -13,11 +13,11 @@ import connectionRouter from "./Routes/connectionRouter.js";
 import connectDB from "./db.js";
 const app = express();
 app.use(express.json());
-// const corsOptions = {
-//   origin: 'https://settingappfrontend.vercel.app',
-//   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-// };
-// app.use(cors(corsOptions));
+const corsOptions = {
+  origin: "https://setting-app-frontend.vercel.app/",
+  //   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+app.use(cors(corsOptions));
 app.use(
   cors({
     origin: "https://setting-app-frontend.vercel.app/",
